@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+* {
+  font-family: Roboto;
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #181818;
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+}
+
+.timer__change {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.timer__change:hover input {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+.timer__change input:hover {
+  border-color: #fff;
+}/*# sourceMappingURL=style.css.map */

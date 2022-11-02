@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import TimerCounting from "./components/TimerCounting";
+import TimerInputsChange from "./components/TimerInputsChange";
 import getPadTime from "./helpers/getPadTime";
 
 function App() {
@@ -60,41 +62,42 @@ function App() {
   };
 
   function validateInputs(e) {
-    if (e.target.value === '0' || e.target.value === '00') e.target.value = '';
-    e.target.value = String(e.target.value).padStart(2, '0');
+    if (e.target.value === '0' || e.target.value === '00' || e.target.value === '')  {
+      e.target.value = '';
+    } else {
+      e.target.value = String(e.target.value).padStart(2, '0');
+    }
     changeTime(e);
   };
 
   return (
     <div className="App">
+      <div className="timer">
         {isError 
-        ?
-          <div>Значение должно быть меньше или равно 59 </div>
-        :
-          <div></div>
-        }
-        {isCounting || isPaused
-        ?
-          <div className="timer-active">
-            <span>{hours}</span>
-            <span>:</span>
-            <span>{minutes}</span>
-            <span>:</span>
-            <span>{seconds}</span>
-          </div>
-        :
-          <div className="timer">
-            <input id="hours" onChange={(e) => changeTime(e)} value={newTime.hours} onBlur={(e) => validateInputs(e)} type="number" min="0" max="99" placeholder="00"/>
-            <span>:</span>
-            <input id="minutes" onChange={(e) => changeTime(e)} value={newTime.minutes} onBlur={(e) => validateInputs(e)} type="number" min="0" max="59" placeholder="00"/>
-            <span>:</span>
-            <input id="seconds" onChange={(e) => changeTime(e)} value={newTime.seconds} onBlur={(e) => validateInputs(e)} type="number" min="0" max="59" placeholder="00"/>
-          </div>
-        }
-        { (isCounting && !isPaused)  ? <button onClick={handlePause}>Pause</button> :
-          (isCounting && isPaused) ? <div><button onClick={handleClear}>Clear</button><button onClick={handlePause}>Continue</button></div> :
-          <button onClick={handleStart}>Start</button>
-        }
+          ?
+            <div>Значение должно быть меньше или равно 59 </div>
+          :
+            <div></div>
+          }
+          {isCounting || isPaused
+          ?
+            <TimerCounting
+              minutes={minutes}
+              seconds={seconds}
+              hours={hours}
+            />
+          :
+            <TimerInputsChange
+              changeTime={changeTime}
+              newTime={newTime}
+              validateInputs={validateInputs}
+            />
+          }
+          { (isCounting && !isPaused)  ? <button onClick={handlePause}>Pause</button> :
+            (isCounting && isPaused) ? <div><button onClick={handleClear}>Clear</button><button onClick={handlePause}>Continue</button></div> :
+            <button onClick={handleStart}>Start</button>
+          }
+      </div>
     </div>
   );
 }

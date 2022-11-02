@@ -1,0 +1,16 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
+.input {
+    max-width: 215px;
+    font-size: 186px;
+    line-height: 218px;
+    color: #fff;
+    background-color: transparent;
+    border-bottom: 4px solid transparent;
+    transition: border-color .4s ease;
+    cursor: pointer;
+}
