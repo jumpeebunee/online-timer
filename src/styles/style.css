@@ -13,6 +13,7 @@
 
 .timer {
   display: flex;
+  align-items: center;
   flex-direction: column;
 }
 
@@ -26,4 +27,71 @@
 }
 .timer__change input:hover {
   border-color: #fff;
+}
+
+.counting-number {
+  max-width: 215px;
+  font-size: 186px;
+  line-height: 218px;
+  color: #fff;
+  background-color: transparent;
+  border-bottom: 4px solid transparent;
+  transition: border-color 0.4s ease;
+}
+
+.timer-active {
+  margin-bottom: 25px;
+}
+
+.controls {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  width: 60px;
+  height: 60px;
+  background-color: #FF6C3C;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 22px 22px;
+  transition: background 0.4s ease;
+}
+.btn:hover {
+  background-color: #B75434;
+}
+
+.start-btn {
+  background-image: url(../assets/start.svg);
+}
+
+.pause-btn {
+  background-image: url(../assets/pause.svg);
+}
+
+.stop-btn {
+  background-image: url(../assets/stop.svg);
+}
+
+@media (max-width: 800px) {
+  .timer__change {
+    margin-bottom: 3.13vw;
+  }
+  .counting-number {
+    max-width: 26.88vw;
+    font-size: 23.25vw;
+    line-height: 27.25vw;
+  }
+  .timer-active {
+    margin-bottom: 3.13vw;
+  }
+  .controls {
+    gap: 2.5vw;
+  }
+  .btn {
+    width: 7.5vw;
+    height: 7.5vw;
+    background-size: 2.75vw 2.75vw;
+  }
 }/*# sourceMappingURL=style.css.map */

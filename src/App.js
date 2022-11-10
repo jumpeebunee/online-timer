@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import AppButton from "./components/AppButton";
 import TimerCounting from "./components/TimerCounting";
 import TimerInputsChange from "./components/TimerInputsChange";
 import getPadTime from "./helpers/getPadTime";
@@ -75,7 +76,7 @@ function App() {
       <div className="timer">
         {isError 
           ?
-            <div>Значение должно быть меньше или равно 59 </div>
+            <div>The value must be less than or equal to 59 </div>
           :
             <div></div>
           }
@@ -93,9 +94,10 @@ function App() {
               validateInputs={validateInputs}
             />
           }
-          { (isCounting && !isPaused)  ? <button onClick={handlePause}>Pause</button> :
-            (isCounting && isPaused) ? <div><button onClick={handleClear}>Clear</button><button onClick={handlePause}>Continue</button></div> :
-            <button onClick={handleStart}>Start</button>
+          { 
+            (isCounting && !isPaused)  ? <AppButton type="pause" handle={handlePause}></AppButton> :
+            (isCounting && isPaused) ? <div className="controls"><AppButton type="stop" handle={handleClear}></AppButton><AppButton type="start" handle={handlePause}></AppButton></div> :
+            <AppButton type="start" handle={handleStart}></AppButton>
           }
       </div>
     </div>

@@ -14,3 +14,12 @@ input::-webkit-inner-spin-button {
     transition: border-color .4s ease;
     cursor: pointer;
 }
+
+
+@media(max-width: 800px) {
+    .input {
+        max-width: 26.88vw;
+        font-size: 23.25vw;
+        line-height: 27.25vw;
+    }
+}
