@@ -51,7 +51,7 @@
 
 .controls {
     display: flex;
-    gap: 20px   ;
+    gap: 20px;
 }
 
 .btn {
@@ -110,5 +110,9 @@
         width: 7.50vw;
         height: 7.50vw;
         background-size: 2.75vw 2.75vw;
+    }
+
+    .timer-error {
+        font-size: 5.33vw;
     }
 }
