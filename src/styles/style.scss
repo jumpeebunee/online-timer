@@ -19,6 +19,7 @@
 }
 
 .timer__change {
+    padding-top: 40px;
     display: flex;
     align-items: center;
     margin-bottom: 25px;
@@ -78,6 +79,12 @@
 
 .stop-btn {
     background-image: url(../assets/stop.svg);
+}
+
+.timer-error {
+    font-size: 48px;
+    color: #fff;
+    position: absolute;
 }
 
 @media(max-width: 800px) {

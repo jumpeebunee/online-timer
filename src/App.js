@@ -76,7 +76,7 @@ function App() {
       <div className="timer">
         {isError 
           ?
-            <div>The value must be less than or equal to 59 </div>
+            <div className="timer-error">The value must be less than or equal to 59 </div>
           :
             <div></div>
           }
