@@ -1,5 +1,5 @@
 # Timer
-[Live Demo](https://reliable-dolphin-8f21a5.netlify.app). 
+[Live Demo](https://cheerful-palmier-41e606.netlify.app). 
 The app is a countdown timer. A page that helps you keep track of time so that you don't forget anything.
 
 ## Opportunities
