@@ -1,4 +1,4 @@
-# Timer
+# Social App
 [Live Demo](https://cheerful-palmier-41e606.netlify.app). 
 Now I am developing a social network similar to VKontakte. At the moment, authorization and creation of posts have been implemented.
 
